@@ -111,9 +111,9 @@ resource "aws_eks_node_group" "askabhi" {
   instance_types = ["t2.medium"]
 
   remote_access {
-  ec2_ssh_key = var.askabhi_key_name
-  source_security_group_ids = [aws_security_group.askabhi_node_sg.id]
-}
+    ec2_ssh_key = var.ssh_key_name
+    source_security_group_ids = [aws_security_group.askabhi_node_sg.id]
+  }
 }
 
 resource "aws_iam_role" "askabhi_cluster_role" {
